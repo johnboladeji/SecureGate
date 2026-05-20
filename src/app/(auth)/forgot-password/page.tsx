@@ -33,6 +33,12 @@ export default function ForgotPasswordPage() {
   return (
     <main className="flex min-h-screen items-center justify-center p-6">
       <div className="card">
+        <Link href="/" className="mb-6 flex items-center gap-2 text-xl font-bold">
+          <svg viewBox="0 0 24 24" className="h-7 w-7 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          SecureGate
+        </Link>
         <h1 className="text-2xl font-semibold">Forgot your password?</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Enter your email and we'll send you a link to reset it.
