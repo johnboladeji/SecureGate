@@ -1,0 +1,32 @@
+// SecureGate Prisma schema
+// Fields match the spec exactly (Live Task brief, Phase 1).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @id
+  expires    DateTime
+}
+
+model PasswordResetToken {
+  email   String
+  token   String   @id
+  expires DateTime
+}
